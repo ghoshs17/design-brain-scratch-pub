@@ -1,2 +1,4 @@
 {"at": "2026-11-21T14:30:22Z", "commit": "276f8ed16b", "detail": "1466610396|kaas-prd/dummy|1", "item": "inbox/1466610396/202611/44912958940-1-afd1d77ec79ebfb4", "verdict": "accepted"}
 {"at": "2026-11-21T14:30:22Z", "commit": "37d375a79a", "detail": "1466610396|kaas-prd/dummy|2", "item": "inbox/1466610396/202611/44912976306-1-4067d2747907a8f3", "verdict": "accepted"}
+{"at": "2026-11-21T14:33:22Z", "commit": "5a1a3e3803", "detail": "Error: verifying with issuer \"sigstore.dev\"", "item": "inbox/1466610396/202611/44914509946-1-c0def9e405eeb3e8", "verdict": "quarantined:unverifiable"}
+{"at": "2026-11-21T14:33:22Z", "commit": "ad46b98607", "detail": "38a3c4e21e38", "item": "inbox/1466610396/202611/44914509931-1-b4e01e9b3eef1ffc", "verdict": "quarantined:workflow_not_approved"}
