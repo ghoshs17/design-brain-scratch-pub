@@ -1,0 +1,84 @@
+name: upload
+on:
+  workflow_call:
+    inputs:
+      claim_repo: {type: string, default: ''}      # TEST HOOK: forged repo claim in facts
+      wf_sha: {type: string, default: ''}          # TEST HOOK: forged producer.workflow_sha
+      deployment_id: {type: string, default: ''}
+      pad_bytes: {type: number, default: 0}        # TEST HOOK: oversized payload
+    secrets:
+      central_token: {required: true}
+permissions: {}
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      attestations: write
+      contents: read
+    steps:
+      - name: build submission.json
+        env:
+          IN_CLAIM: ${{ inputs.claim_repo }}
+          IN_WFSHA: ${{ inputs.wf_sha }}
+          IN_DEPL: ${{ inputs.deployment_id }}
+          IN_PAD: ${{ inputs.pad_bytes }}
+        run: |
+          python3 - <<'PY'
+          import json, os, time
+          e = os.environ
+          depl = int(e['IN_DEPL'] or e['GITHUB_RUN_NUMBER'])
+          sub = {"schema_version": 1,
+                 "repo_id": e['GITHUB_REPOSITORY_ID'],
+                 "repo": e['IN_CLAIM'] or e['GITHUB_REPOSITORY'],
+                 "run_id": int(e['GITHUB_RUN_ID']), "run_attempt": int(e['GITHUB_RUN_ATTEMPT']),
+                 "kind": "official", "unit": "kaas-prd/dummy", "deployment_id": depl,
+                 "producer": {"workflow_sha": e['IN_WFSHA'] or e['GITHUB_SHA']},
+                 "manifest": {"source_sha": e['GITHUB_SHA']},
+                 "facts": {"endpoints": [{"path": "/v1/dummy", "method": "GET"}]},
+                 "evidence": {"deployed": True}}
+          if e['IN_CLAIM']:
+              sub["repo_id"] = "999999999"
+          if int(e['IN_PAD'] or 0):
+              sub["facts"]["pad"] = "x" * int(e['IN_PAD'])
+          json.dump(sub, open('submission.json', 'w'), sort_keys=True)
+          PY
+          ls -l submission.json
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8
+        id: attest
+        with:
+          subject-path: submission.json
+      - name: commit to inbox and wake central
+        env:
+          TOKEN: ${{ secrets.central_token }}
+          BUNDLE: ${{ steps.attest.outputs.bundle-path }}
+          CENTRAL: ghoshs17/design-brain-scratch-pub
+        run: |
+          set -eu
+          cp "$BUNDLE" bundle.json
+          d16=$(cat submission.json bundle.json | sha256sum | cut -c1-16)
+          month=$(date -u +%Y%m)
+          ref="inbox/${GITHUB_REPOSITORY_ID}/${month}"
+          dir="${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${d16}"
+          auth="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)"
+          mkdir w && cd w && git init -q
+          git remote add origin "https://github.com/${CENTRAL}.git"
+          git config user.name uploader; git config user.email uploader@invalid
+          for i in 1 2 3 4 5 6; do
+            git -c http.extraheader="$auth" fetch -q --depth 1 origin "$ref" && git checkout -q -B inbox FETCH_HEAD
+            mkdir -p "$dir"; cp ../submission.json ../bundle.json "$dir/"
+            git add "$dir"; git commit -q -m "submission ${GITHUB_REPOSITORY_ID} ${GITHUB_RUN_ID}"
+            if git -c http.extraheader="$auth" push -q origin "HEAD:refs/heads/$ref"; then echo "pushed attempt $i"; break; fi
+            echo "push race, retry $i"; sleep $((RANDOM % 4 + 1)); git reset -q --hard
+            [ $i = 6 ] && exit 1
+          done
+          date -u +%FT%T.%3NZ > ../pushed_at; cat ../pushed_at
+          curl -sS -o /dev/null -w "dispatch http %{http_code}\n" -X POST \
+            -H "Authorization: Bearer $TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${CENTRAL}/dispatches" -d '{"event_type":"inbox-wake"}'
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: sub-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            submission.json
+            bundle.json
