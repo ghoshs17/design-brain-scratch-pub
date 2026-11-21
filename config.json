@@ -1,1 +1,1 @@
-{"owner_id": "137478264", "signer_workflow": "ghoshs17/design-brain-scratch-pub/.github/workflows/upload.yml", "accepted_triggers": ["workflow_run", "schedule", "push", "workflow_dispatch"], "max_items": 300, "max_submission": 262144, "max_bundle": 65536}
+{"owner_id": "137478264", "signer_workflow": "ghoshs17/design-brain-scratch-pub/.github/workflows/upload.yml", "accepted_triggers": ["workflow_run", "schedule", "push"], "max_items": 300, "max_submission": 262144, "max_bundle": 65536}
