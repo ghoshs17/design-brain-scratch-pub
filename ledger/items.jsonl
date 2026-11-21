@@ -11,3 +11,19 @@
 {"at": "2026-11-21T14:34:06Z", "commit": "2bbf6f0b57", "detail": "submission.json 300454", "item": "inbox/1466610396/202611/44914550708-1-b85c86566bfeb379", "verdict": "quarantined:oversize"}
 {"at": "2026-11-21T14:34:06Z", "commit": "007f4d49bb", "detail": "1466610396|kaas-prd/dummy|2", "item": "inbox/1466610396/202611/44914557058-1-17a7ed9a7dba3508", "verdict": "quarantined:conflict"}
 {"at": "2026-11-21T14:34:06Z", "commit": "06191d2612", "detail": "1466610396|kaas-prd/dummy|11", "item": "inbox/1466610396/202611/44914579109-1-61176ec41992e05a", "verdict": "accepted"}
+{"at": "2026-11-21T15:52:51Z", "commit": "74ac7792f9", "detail": "1466610396|kaas-prd/dummy|2", "item": "inbox/1466610396/202610/44912976306-1-4067d2747907a8f3", "verdict": "quarantined:conflict"}
+{"at": "2026-11-21T15:52:51Z", "commit": "74ac7792f9", "detail": "", "item": "inbox/1466610396/202610/44914579109-1-61176ec41992e05a", "verdict": "quarantined:bad_digest"}
+{"at": "2026-11-21T15:52:51Z", "commit": "7e026e6de2", "detail": "Error: bundle content could not be parsed: proto:\u00a0syntax error (line 1:1): invalid value x", "item": "inbox/1466610396/202611/1-1-037e34ba10c9023a", "verdict": "quarantined:unverifiable"}
+{"at": "2026-11-21T15:52:51Z", "commit": "7e026e6de2", "detail": "Error: bundle content could not be parsed: proto:\u00a0syntax error (line 1:1): unexpected token", "item": "inbox/1466610396/202611/2-1-e3b0c44298fc1c14", "verdict": "quarantined:unverifiable"}
+{"at": "2026-11-21T15:52:51Z", "commit": "7e026e6de2", "detail": "3-1-aaaaaaaaaaaaaaaa/evil.sh", "item": "inbox/1466610396/202611/3-1-aaaaaaaaaaaaaaaa", "verdict": "quarantined:bad_path"}
+{"at": "2026-11-21T15:52:51Z", "commit": "7e026e6de2", "detail": "mode 120000", "item": "inbox/1466610396/202611/4-1-bbbbbbbbbbbbbbbb", "verdict": "quarantined:bad_path"}
+{"at": "2026-11-21T15:52:51Z", "commit": "7e026e6de2", "detail": "Error: verifying with issuer \"sigstore.dev\"", "item": "inbox/1466610396/202611/44914579109-1-b2253baa24ac83a6", "verdict": "quarantined:unverifiable"}
+{"at": "2026-11-21T15:52:51Z", "commit": "7e026e6de2", "detail": "submission.json 262145", "item": "inbox/1466610396/202611/5-1-cccccccccccccccc", "verdict": "quarantined:oversize"}
+{"at": "2026-11-21T15:52:51Z", "commit": "7e026e6de2", "detail": "garbage.txt", "item": "inbox/1466610396/202611/garbage.txt", "verdict": "quarantined:bad_path"}
+{"at": "2026-11-21T15:52:51Z", "detail": "M 44912976306-1-4067d2747907a8f3/submission.json", "item": "inbox/1466610396/202611/44912976306-1-4067d2747907a8f3#tamper:M:d7197503", "verdict": "inbox_tamper"}
+{"at": "2026-11-21T15:52:51Z", "detail": "D 44914579109-1-61176ec41992e05a/bundle.json", "item": "inbox/1466610396/202611/44914579109-1-61176ec41992e05a#tamper:D:d7197503", "verdict": "inbox_tamper"}
+{"at": "2026-11-21T15:52:51Z", "commit": "234cadce4a", "detail": "1466610396|kaas-prd/dummy|2", "item": "inbox/1466610396/202611/44915012388-1-bf1b0e2e1ace4d76", "verdict": "quarantined:conflict"}
+{"at": "2026-11-21T15:52:51Z", "commit": "41bec94696", "detail": "1466610396|kaas-prd/dummy|50", "item": "inbox/1466610396/202611/44915015371-1-7de93b95dd0b85ce", "verdict": "accepted"}
+{"at": "2026-11-21T15:52:52Z", "commit": "e8b8c71934", "detail": "Error: expected SourceRepositoryURI to be https://github.com/ghoshs17/other-b, got https://github.com/ghoshs17/design-caller-scratch-pub", "item": "inbox/777/202611/44912976306-1-4067d2747907a8f3", "verdict": "quarantined:unverifiable"}
+{"at": "2026-11-21T15:52:52Z", "commit": "2f8b7aadb2", "detail": "", "item": "inbox/999/202611/44912976306-1-4067d2747907a8f3", "verdict": "quarantined:bad_digest"}
+{"at": "2026-11-21T15:52:52Z", "detail": "ref name", "item": "inbox/abc/202611", "verdict": "quarantined:bad_path"}
