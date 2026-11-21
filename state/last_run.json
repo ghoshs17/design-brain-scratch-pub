@@ -1,12 +1,10 @@
 {
- "at": "2026-11-21T14:33:41Z",
+ "at": "2026-11-21T14:33:48Z",
  "counts": {
-  "quarantined:foreign_assertion": 1,
-  "quarantined:schema": 1,
-  "quarantined:sha_mismatch": 1
+  "superseded": 1
  },
  "event": "repository_dispatch",
- "handled": 3,
- "run_id": "44914557485",
- "seconds": 0.9
+ "handled": 1,
+ "run_id": "44914564466",
+ "seconds": 0.6
 }
