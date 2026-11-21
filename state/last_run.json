@@ -1,10 +1,10 @@
 {
- "at": "2026-11-21T16:01:51Z",
+ "at": "2026-11-21T16:03:34Z",
  "counts": {
-  "accepted": 1
+  "quarantined:bad_trigger": 1
  },
  "event": "repository_dispatch",
  "handled": 1,
- "run_id": "44922290583",
- "seconds": 0.9
+ "run_id": "44922446466",
+ "seconds": 1.2
 }
