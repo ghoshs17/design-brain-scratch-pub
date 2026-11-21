@@ -6,3 +6,5 @@
 {"at": "2026-11-21T14:33:41Z", "commit": "53303b9480", "detail": "", "item": "inbox/1466610396/202611/44914543214-1-15e5945e6920463f", "verdict": "quarantined:sha_mismatch"}
 {"at": "2026-11-21T14:33:41Z", "commit": "dc7c32f39d", "detail": "string", "item": "inbox/1466610396/202611/44914546543-1-508699b5e3423e45", "verdict": "quarantined:schema"}
 {"at": "2026-11-21T14:33:48Z", "commit": "977022fee1", "detail": "hw 2", "item": "inbox/1466610396/202611/44914553983-1-4994aea217c95494", "verdict": "superseded"}
+{"at": "2026-11-21T14:33:55Z", "commit": "a2564eff79", "detail": "1466610396|kaas-prd/dummy|2", "item": "inbox/1466610396/202611/44914560258-1-503b67ea5887da0d", "verdict": "quarantined:conflict"}
+{"at": "2026-11-21T14:33:55Z", "commit": "9b11782cb0", "detail": "refs/heads/feat", "item": "inbox/1466610396/202611/44914569465-1-70bece4b5313b56b", "verdict": "quarantined:bad_ref"}
