@@ -27,3 +27,9 @@
 {"at": "2026-11-21T15:52:52Z", "commit": "e8b8c71934", "detail": "Error: expected SourceRepositoryURI to be https://github.com/ghoshs17/other-b, got https://github.com/ghoshs17/design-caller-scratch-pub", "item": "inbox/777/202611/44912976306-1-4067d2747907a8f3", "verdict": "quarantined:unverifiable"}
 {"at": "2026-11-21T15:52:52Z", "commit": "2f8b7aadb2", "detail": "", "item": "inbox/999/202611/44912976306-1-4067d2747907a8f3", "verdict": "quarantined:bad_digest"}
 {"at": "2026-11-21T15:52:52Z", "detail": "ref name", "item": "inbox/abc/202611", "verdict": "quarantined:bad_path"}
+{"at": "2026-11-21T15:58:58Z", "commit": "d0f84d1d65", "detail": "1466610396|kaas-prd/dummy|50", "item": "inbox/1466610396/202609/44915015371-1-7de93b95dd0b85ce", "verdict": "duplicate"}
+{"at": "2026-11-21T15:58:58Z", "commit": "38c9797903", "detail": "1466610396|kaas-prd/dummy|60", "item": "inbox/1466610396/202611/44921596194-1-b66941bfbd7f6e76", "verdict": "accepted"}
+{"at": "2026-11-21T15:58:58Z", "commit": "ed94141d02", "detail": "1466610396|kaas-prd/dummy|60", "item": "inbox/1466610396/202611/44921656364-1-a1f89a2471895182", "verdict": "duplicate"}
+{"at": "2026-11-21T15:58:58Z", "detail": "M 44921659601-1-6945f3ddd40ed60d/submission.json", "item": "inbox/1466610396/202611/44921659601-1-6945f3ddd40ed60d#tamper:M:e2c01450", "verdict": "inbox_tamper"}
+{"at": "2026-11-21T15:58:58Z", "commit": "daf77d14dc", "detail": "1466610396|kaas-prd/dummy|61", "item": "inbox/1466610396/202611/44921659601-1-6945f3ddd40ed60d", "verdict": "accepted"}
+{"at": "2026-11-21T15:58:58Z", "commit": "d0f84d1d65", "detail": "999", "item": "inbox/999/202609/44915015371-1-7de93b95dd0b85ce", "verdict": "quarantined:repo_not_enabled"}

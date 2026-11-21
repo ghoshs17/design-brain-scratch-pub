@@ -1,15 +1,12 @@
 {
- "at": "2026-11-21T15:52:52Z",
+ "at": "2026-11-21T15:58:58Z",
  "counts": {
-  "accepted": 1,
-  "quarantined:bad_digest": 2,
-  "quarantined:bad_path": 3,
-  "quarantined:conflict": 2,
-  "quarantined:oversize": 1,
-  "quarantined:unverifiable": 4
+  "accepted": 2,
+  "duplicate": 2,
+  "quarantined:repo_not_enabled": 1
  },
  "event": "repository_dispatch",
- "handled": 16,
- "run_id": "44921510933",
- "seconds": 1.4
+ "handled": 6,
+ "run_id": "44922024675",
+ "seconds": 1.1
 }
