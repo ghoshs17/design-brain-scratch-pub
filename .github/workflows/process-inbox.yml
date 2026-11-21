@@ -1,0 +1,28 @@
+name: process-inbox
+on:
+  repository_dispatch:
+    types: [inbox-wake]
+  schedule:
+    - cron: '*/5 * * * *'
+concurrency:
+  group: inbox-process
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - name: default-branch guard
+        run: |
+          [ "$GITHUB_REF" = "refs/heads/main" ] || { echo "not default branch"; exit 1; }
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - name: process
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh --version | head -1
+          python3 ingest/process.py
