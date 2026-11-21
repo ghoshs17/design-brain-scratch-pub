@@ -63,7 +63,7 @@ def canon(sub):
         if isinstance(o, list):
             return [strip(v) for v in o]
         return o
-    body = strip({"facts": sub["facts"], "evidence": sub["evidence"], "manifest": sub["manifest"]})
+    body = strip({"facts": sub["facts"], "evidence": sub["evidence"]})
     return hashlib.sha256(json.dumps(body, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
 
 
