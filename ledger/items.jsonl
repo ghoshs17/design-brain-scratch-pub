@@ -2,3 +2,6 @@
 {"at": "2026-11-21T14:30:22Z", "commit": "37d375a79a", "detail": "1466610396|kaas-prd/dummy|2", "item": "inbox/1466610396/202611/44912976306-1-4067d2747907a8f3", "verdict": "accepted"}
 {"at": "2026-11-21T14:33:22Z", "commit": "5a1a3e3803", "detail": "Error: verifying with issuer \"sigstore.dev\"", "item": "inbox/1466610396/202611/44914509946-1-c0def9e405eeb3e8", "verdict": "quarantined:unverifiable"}
 {"at": "2026-11-21T14:33:22Z", "commit": "ad46b98607", "detail": "38a3c4e21e38", "item": "inbox/1466610396/202611/44914509931-1-b4e01e9b3eef1ffc", "verdict": "quarantined:workflow_not_approved"}
+{"at": "2026-11-21T14:33:41Z", "commit": "09fa5426f2", "detail": "claims 999999999/ghoshs17/other", "item": "inbox/1466610396/202611/44914538914-1-00729924587f41cb", "verdict": "quarantined:foreign_assertion"}
+{"at": "2026-11-21T14:33:41Z", "commit": "53303b9480", "detail": "", "item": "inbox/1466610396/202611/44914543214-1-15e5945e6920463f", "verdict": "quarantined:sha_mismatch"}
+{"at": "2026-11-21T14:33:41Z", "commit": "dc7c32f39d", "detail": "string", "item": "inbox/1466610396/202611/44914546543-1-508699b5e3423e45", "verdict": "quarantined:schema"}
