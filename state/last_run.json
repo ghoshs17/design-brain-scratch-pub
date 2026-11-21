@@ -1,12 +1,8 @@
 {
- "at": "2026-11-21T14:34:06Z",
- "counts": {
-  "accepted": 1,
-  "quarantined:conflict": 1,
-  "quarantined:oversize": 1
- },
+ "at": "2026-11-21T14:34:16Z",
+ "counts": {},
  "event": "repository_dispatch",
- "handled": 3,
- "run_id": "44914583999",
- "seconds": 0.9
+ "handled": 0,
+ "run_id": "44914600749",
+ "seconds": 0.8
 }
