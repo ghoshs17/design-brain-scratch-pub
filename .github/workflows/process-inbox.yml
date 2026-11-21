@@ -26,3 +26,5 @@ jobs:
         run: |
           gh --version | head -1
           python3 ingest/process.py
+
+# re-register schedule
