@@ -1,10 +1,8 @@
 {
- "at": "2026-11-21T16:00:14Z",
- "counts": {
-  "superseded": 2
- },
+ "at": "2026-11-21T16:00:23Z",
+ "counts": {},
  "event": "repository_dispatch",
- "handled": 2,
- "run_id": "44922115526",
- "seconds": 1.2
+ "handled": 0,
+ "run_id": "44922145939",
+ "seconds": 0.9
 }
