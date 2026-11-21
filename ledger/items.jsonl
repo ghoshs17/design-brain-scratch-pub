@@ -8,3 +8,6 @@
 {"at": "2026-11-21T14:33:48Z", "commit": "977022fee1", "detail": "hw 2", "item": "inbox/1466610396/202611/44914553983-1-4994aea217c95494", "verdict": "superseded"}
 {"at": "2026-11-21T14:33:55Z", "commit": "a2564eff79", "detail": "1466610396|kaas-prd/dummy|2", "item": "inbox/1466610396/202611/44914560258-1-503b67ea5887da0d", "verdict": "quarantined:conflict"}
 {"at": "2026-11-21T14:33:55Z", "commit": "9b11782cb0", "detail": "refs/heads/feat", "item": "inbox/1466610396/202611/44914569465-1-70bece4b5313b56b", "verdict": "quarantined:bad_ref"}
+{"at": "2026-11-21T14:34:06Z", "commit": "2bbf6f0b57", "detail": "submission.json 300454", "item": "inbox/1466610396/202611/44914550708-1-b85c86566bfeb379", "verdict": "quarantined:oversize"}
+{"at": "2026-11-21T14:34:06Z", "commit": "007f4d49bb", "detail": "1466610396|kaas-prd/dummy|2", "item": "inbox/1466610396/202611/44914557058-1-17a7ed9a7dba3508", "verdict": "quarantined:conflict"}
+{"at": "2026-11-21T14:34:06Z", "commit": "06191d2612", "detail": "1466610396|kaas-prd/dummy|11", "item": "inbox/1466610396/202611/44914579109-1-61176ec41992e05a", "verdict": "accepted"}
